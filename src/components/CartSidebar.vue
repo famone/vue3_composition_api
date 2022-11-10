@@ -6,6 +6,7 @@
                 <h4 class="text-black font-bold leading-tight text-sm">{{item.name}}</h4>
             </div>
             <p class="text-black font-medium leading-tight text-sm">${{item.price}} ({{item.quantity}})</p>
+            <i class="fa-solid fa-trash text-gray-400 cursor-pointer ml-3 hover:text-red-500" @click="data.deleteItem(idx)"></i>
         </div>
         <div class="py-4 text-right">
             <p class="text-black font-light leading-tight text-xl">Total: ${{countCartTotal}}</p>

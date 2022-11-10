@@ -66,6 +66,9 @@ export const useShoppingStore = defineStore('shopping', {
             }else{
                 this.likes.push(id)
             }
+        },
+        deleteItem(index){
+            this.cartItems.splice(index, 1)
         }
         // addToCart(item) {
         //     let index = this.cartItems.findIndex(product => product.id === item.id);
