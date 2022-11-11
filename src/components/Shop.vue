@@ -16,7 +16,10 @@
                     <p class="text-[#5D5D5B] font-light text-sm">by {{item.author}}</p>
                     <div class="flex justify-between items-center mt-1">
                         <p class="text-black font-medium leading-tight text-2xl">${{item.price}}</p>
-                        <button class="inline-block px-6 py-3 bg-purple-600 text-white font-medium text-xs uppercase rounded-full hover:bg-purple-500 transition duration-300 ease-in-out" @click="addToCart(item)">Buy now</button>
+                        <button class="inline-block px-6 py-3 bg-purple-600 text-white font-medium text-xs uppercase rounded-full hover:bg-purple-500 transition duration-300 ease-in-out" @click="addToCart(item)" :class="{ 'bg-green-400 hover:bg-green-500' : itemInCart(item.id) }">
+                            <i v-if="itemInCart(item.id)" class="fa-solid fa-check"></i>
+                            {{ itemInCart(item.id) ? 'In cart' : 'Buy now' }}
+                        </button>
                     </div>
                 </div>
             </div>
@@ -36,6 +39,17 @@ const addToCart = (item) => {
 }
 const setLike = (id) => {
     data.setLike(id)
+}
+
+const itemInCart= (id) => {
+    let productInCart = data.getCartItems.find(item => {
+        return item.id === id
+    })
+    if(productInCart){
+        return true
+    }else{
+        return false
+    }
 }
 
 </script>
