@@ -1,5 +1,5 @@
 <template>
-    <header class="sticky top-0 bg-white shadow-lg z-50">
+    <header class="sticky top-0 bg-white shadow-lg z-40">
         <div class="flex py-5 px-8 justify-between">
             <div class="flex">
                 <img src="../assets/logo.svg" class="mr-2">

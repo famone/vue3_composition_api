@@ -24,18 +24,21 @@
                 </div>
             </div>
         </div>
+        <Modal v-if="modalShow" @closeModal="modalShow = false" />
     </section>
 </template>
 
 <script setup>
+import Modal from './Modal.vue'
 import { reactive, ref } from 'vue'
 import { useShoppingStore } from '../stores'
 
 const data = useShoppingStore()
-const cart = reactive([])
+const modalShow = ref(false)
 
 const addToCart = (item) => {
     data.addToCart(item)
+    modalShow.value = true
 }
 const setLike = (id) => {
     data.setLike(id)
