@@ -1,4 +1,3 @@
-# First look at the composition API method)
 # Vue 3 + Vite
 
 First look at the composition API method)
