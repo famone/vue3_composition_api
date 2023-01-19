@@ -2,7 +2,7 @@
     <section class="py-[120px]">
         <div class="container mx-auto">
             <button class="inline-block px-6 py-3 bg-purple-600 text-white font-medium text-xs uppercase rounded-full hover:bg-purple-500 transition duration-300 ease-in-out mb-10" @click="createRoute">
-                Создать маршрут
+                Создать маршру
             </button>
             <yandex-map
                 :settings="settings"
